@@ -1,4 +1,7 @@
 tasks:
-  - init: echo "Replace me with a build script for the project."
-    command: echo "Replace me with something that should run on every start, or just
-      remove me entirely."
+  - init: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh && cargo install cargo-generate && npm install npm@latest -g && npm install --prefix=www www && wasm-pack build
+    command: npm --prefix=www run start
+
+ports:
+  - port: 8080
+    onOpen: open-preview
