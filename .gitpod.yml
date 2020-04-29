@@ -1,5 +1,8 @@
+image:
+  file: .gitpod.Dockerfile
+
 tasks:
-  - init: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh && cargo install cargo-generate && npm install npm@latest -g && npm install --prefix=www www && wasm-pack build
+  - init: npm install npm@latest -g && npm install --prefix=www www && wasm-pack build
     command: npm --prefix=www run start
 
 ports:
